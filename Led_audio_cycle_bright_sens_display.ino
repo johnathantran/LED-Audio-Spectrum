@@ -4,91 +4,124 @@ Only thing that needs to be adjusted is the "num_leds" in this sketch to how man
 */
 
 #include <FastLED.h>
-#include <LiquidCrystal.h>
-
+#define brightness 100
 #define num_leds 60
-#define pin 6
+#define pin 5
 
 CRGB leds[num_leds];
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 void setup() {
   Serial.begin(9600);
   FastLED.addLeds<WS2811, pin, GRB>(leds, num_leds);
-  lcd.begin(16, 2); //Initialize the 16x2 LCD
-  lcd.clear();  //Clear any old data displayed on the LCD
+  FastLED.setBrightness(brightness);
 }
 
 void loop() {
-  int brightness = (analogRead(2)*0.24);
+  
+  //int sensitivity = 5;
   int sensitivity = (analogRead(3)*0.009);
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Brightness:  ");
-  lcd.print(round(analogRead(2)*0.09775171));
-  lcd.print("%");
-  lcd.setCursor(0, 1);
-  lcd.print("Sensitivity: ");
-  lcd.print(round(analogRead(3)*0.09775171));
-  lcd.print("%");
   int x = analogRead(0);
   x = x * sensitivity;
   int y = analogRead(1);
-  int d;
-  //  Serial.println(y);
+  int midpoint = 24; // num_leds/2 typically
+  Serial.print("x: ");
+  Serial.println(x);
   int c = 0;
-  FastLED.setBrightness(brightness);
+  
   if (y < 100) {
+    /*
     if (x < 71) {
-      leds[(num_leds/2)] = CRGB(255, 0, 0);
+      leds[(midpoint)] = CRGB(117,199,169);
+      //Serial.print("\t white");
     }
     else if (x > 71 && x <= 142) {
-      leds[(num_leds/2)] = CRGB(255, 154, 0);
+      leds[(midpoint)] = CRGB(106,198,223);
+      //Serial.print("\t lightblue");
     }
     else if (x > 142 && x <= 213) {
-      leds[(num_leds/2)] = CRGB(255, 255, 0);
+      leds[(midpoint)] = CRGB(106,198,223);
+      //Serial.print("\t lightblue");
     }
     else if (x > 213 && x <= 284) {
-      leds[(num_leds/2)] = CRGB(0, 255, 0);
+      leds[(midpoint)] = CRGB(185,82,159);
+      //Serial.print("\t magenta");
     }
     else if (x > 284 && x <= 355) {
-      leds[(num_leds/2)] = CRGB(0, 0, 255);
+      leds[(midpoint)] = CRGB(185,82,159);
+      //Serial.print("\t magenta");
     }
     else if (x > 355 && x <= 426) {
-      leds[(num_leds/2)] = CRGB(150, 102, 255);
+      leds[(midpoint)] = CRGB(0,255,170);
+      //Serial.print("\t green");
     }
     else {
-      leds[(num_leds/2)] = CRGB(255, 0, 255);
+      leds[(midpoint)] = CRGB(0,255,170);
+      //Serial.print("\t green");
     }
+    */
+    
+    if (x < 71) {
+      leds[(midpoint)] = CRGB(117,199,169);
+      //Serial.print("\t green");
+    }
+    else if (x > 71 && x <= 142) {
+      leds[(midpoint)] = CRGB(106,198,223);
+      //Serial.print("\t lightblue");
+    }
+    else if (x > 142 && x <= 213) {
+      leds[(midpoint)] = CRGB(73,109,180);
+      //Serial.print("\t blue");
+    }
+    else if (x > 213 && x <= 284) {
+      leds[(midpoint)] = CRGB(178,109,173);
+      //Serial.print("\t violet");
+    }
+    else if (x > 284 && x <= 355) {
+      leds[(midpoint)] = CRGB(185,82,159);
+      //Serial.print("\t magenta");
+    }
+    else if (x > 355 && x <= 426) {
+      leds[(midpoint)] = CRGB(106,198,223);
+      //Serial.print("\t lightblue");
+    }
+    else {
+      leds[(midpoint)] = CRGB(0,255,170);
+      //Serial.print("\t green");
+    }
+    
   }
   else if (y > 100 && y <= 1000) {
+    //Serial.println(y);
+    //Serial.print("color: ");
+    
     if (y >= 100 && y < 250) { //2nd up
       c = ((y - 100) * (255 / 150));
-      leds[(num_leds/2)] = CRGB(255, c, 0);
+      leds[(midpoint)] = CRGB(106,198,223);
     }
     else if (y >= 250 && y < 400) { //1st down
       c = ((y - 400) * (-255 / 150));
-      leds[(num_leds/2)] = CRGB(c, 255, 0);
+      leds[(midpoint)] = CRGB(c, 255, 0);
     }
     else if (y >= 400 && y < 550) { //3rd up
       c = ((y - 400) * (255 / 150));
-      leds[(num_leds/2)] = CRGB(0, 255, c);
+      leds[(midpoint)] = CRGB(0, 255, c);
     }
     else if (y >= 550 && y < 700) {//2nd down
       c = ((y - 700) * (-255 / 150));
-      leds[(num_leds/2)] = CRGB(0, c, 255);
+      leds[(midpoint)] = CRGB(0, c, 255);
     }
     else if (y >= 700 && y < 850) {//1st up
       c = ((y - 700) * (255 / 150));
-      leds[(num_leds/2)] = CRGB(c, 0, 255);
+      leds[(midpoint)] = CRGB(c, 0, 255);
     }
     else if (y >= 850 && y < 1000) {//3rd down
       c = ((y - 1000) * (-255 / 150));
-      leds[(num_leds/2)] = CRGB(255, 0, c);
+      leds[(midpoint)] = CRGB(255, 0, c);
     }
     else {
-      leds[(num_leds/2)] = CRGB(255, 0, 0);
+      leds[(midpoint)] = CRGB(255, 0, 0);
     }
+    //Serial.println(c);
   }
   else {
     int a = y;
@@ -97,34 +130,34 @@ void loop() {
       y = analogRead(1);
       if (a >= 100 && a < 250) { //2nd up
         d = ((a - 100) * (255 / 150));
-        leds[(num_leds/2)] = CRGB(255, d, 0);
+        leds[(midpoint)] = CRGB(255, d, 0);
       }
       else if (a >= 250 && a < 400) { //1st down
         d = ((a - 400) * (-255 / 150));
-        leds[(num_leds/2)] = CRGB(d, 255, 0);
+        leds[(midpoint)] = CRGB(d, 255, 0);
       }
       else if (a >= 400 && a < 550) { //3rd up
         d = ((a - 400) * (255 / 150));
-        leds[(num_leds/2)] = CRGB(0, 255, d);
+        leds[(midpoint)] = CRGB(0, 255, d);
       }
       else if (a >= 550 && a < 700) {//2nd down
         d = ((a - 700) * (-255 / 150));
-        leds[(num_leds/2)] = CRGB(0, d, 255);
+        leds[(midpoint)] = CRGB(0, d, 255);
       }
       else if (a >= 700 && a < 850) {//1st up
         d = ((a - 700) * (255 / 150));
-        leds[(num_leds/2)] = CRGB(d, 0, 255);
+        leds[(midpoint)] = CRGB(d, 0, 255);
       }
       else if (a >= 850 && a < 1000) {//3rd down
         d = ((a - 1000) * (-255 / 150));
-        leds[(num_leds/2)] = CRGB(255, 0, d);
+        leds[(midpoint)] = CRGB(255, 0, d);
       }
       else {
-        leds[(num_leds/2)] = CRGB(255, 0, 0);
+        leds[(midpoint)] = CRGB(255, 0, 0);
       }
       FastLED.show();
       delay(60);
-      fill_solid( leds, num_leds, leds[(num_leds/2)]);
+      fill_solid( leds, num_leds, leds[(midpoint)]);
       a = a + 1;
       if (a > 1023){
         a = 0;
@@ -132,12 +165,13 @@ void loop() {
     }
   }
   FastLED.show();
-  delay(10);
-  for (int z = num_leds; z > (num_leds/2); z--) {
+  //delay(10);
+  for (int z = num_leds; z > (midpoint); z--) {
     leds[z] = leds[z - 1];
+    delayMicroseconds(1000);
   }
-  for (int z = 0; z < (num_leds/2); z++) {
+  for (int z = 0; z < (midpoint); z++) {
     leds[z] = leds[z + 1];
+    delayMicroseconds(1000);
   }
 }
-
