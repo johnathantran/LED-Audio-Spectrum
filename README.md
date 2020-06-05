@@ -110,7 +110,7 @@ As shown, I put the sound module right next to my Google Home so that it could e
 #### My Final Desk Setup with both the Music Visualizer and Monitor Backlight:
 This project pairs well with Audio Visualizer on Rainmeter :)
 
-<img src="images/desk_setup.jpg" width="600" height="600" >
+<img src="images/desk_setup.jpg" height="600" >
 
 ----------------------------------------------------------
 STEP 4: ENJOY
