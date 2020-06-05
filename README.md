@@ -21,10 +21,11 @@ One program that I did develop is the script "monitor_lights.ino" for adding LED
 ### Power:
 
 I also realized that Grensom did not really talk about the power requirements for WS2812B LED strips. You will need a 5V DC power supplyt, but the following link helped me a lot in figuring out how many amps of current I needed for the strips (depends on your brightness settings and number of LEDs):
+
 https://www.temposlighting.com/guides/power-any-ws2812b-setup
 
 Based off the LED Pixel current vs. Brightness value graph, I created a quick Excel table to figure out my power requirements for my setup so I could purchase the appropriate 5V DC power supply:
-<img src="images/power_reqs.png" width="300" height="300" >
+<img src="images/power_reqs.png" height="200" >
 
 ----------------------------------------------------------
 STEP 1: Download the needed Libraries
@@ -77,11 +78,11 @@ Use the corresponding Schematics files to wire up the components in the project 
 
 4. Led_audio_cycle_bright_sens_display.ino = Schematic 4
 
-My Arduino Uno Setup for the Music Visualizer:
+#### My Arduino Uno Setup for the Music Visualizer:
 
 <img src="images/uno_pic1.jpg" width="300" height="300" >
 
-My Arduino Nano Setup for the Monitor Backlight:
+#### My Arduino Nano Setup for the Monitor Backlight:
 
 <img src="images/nano_pic.jpg" width="300" height="300" >
 
