@@ -9,12 +9,12 @@ All credits go to him for the development of this code. I made 2 adjustments to 
 
 - Vaporwave (blue, green, purple)
 
-<img src="images/vaporwave.png" width="300" height="300" > <img src="images/uno_pic2.jpg" height="100" >
+<img src="images/vaporwave.png" height="100" >
 
 - Warm Pastels (light yellow, blue, pink)
 (I know these colors don't look the best on screen, but they are visualized quite beautifully on the actual LED strip).
 
-<img src="images/uno_pic1.jpg" width="300" height="300" > <img src="images/warmtones.png" height="100" >
+<img src="images/warmtones.png" height="100" >
 
 Of course, you can define your own color palette according to your taste by following this LED strip color guide:
 http://www.downtownuplighting.com/rgb-color-chart
@@ -30,7 +30,7 @@ I also realized that Grensom did not really talk about the power requirements fo
 https://www.temposlighting.com/guides/power-any-ws2812b-setup
 
 Based off the LED Pixel current vs. Brightness value graph, I created a quick Excel table to figure out my power requirements for my setup so I could purchase the appropriate 5V DC power supply:
-<img src="images/power_reqs.png" height="100" >
+<img src="images/power_reqs.png" height="90" >
 
 ----------------------------------------------------------
 STEP 1: Download the needed Libraries
