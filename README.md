@@ -11,11 +11,12 @@ All credits go to him for the development of this code. Look at the schematics i
 1. I don't have a brightness potentiometer so I have a constant set brightness in the code.
 2. I also reprogrammed the color palette to fit my personal aesthetic. There are 2 included palettes in the program(RGB values included) as shown below. 
 
-- Vaporwave (blue, green, purple)
+#### Vaporwave (blue, green, purple)
 
 <img src="images/vaporwave.png" height="100" >
 
-- Warm Pastels (light yellow, blue, pink)
+#### Warm Pastels (light yellow, blue, pink)
+
 (I know these colors don't look the best on screen, but they are visualized quite beautifully on the actual LED strip).
 
 <img src="images/warmtones.png" height="100" >
