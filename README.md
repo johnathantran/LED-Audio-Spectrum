@@ -79,8 +79,9 @@ Use the corresponding Schematics files to wire up the components in the project 
 4. Led_audio_cycle_bright_sens_display.ino = Schematic 4
 
 #### My Arduino Uno Setup for the Music Visualizer:
+As shown, I put the sound module right next to my Google Home so that it could easily pick up the music.
 
-<img src="images/uno_pic1.jpg" width="300" height="300" >
+<img src="images/uno_pic1.jpg" width="300" height="300" > <img src="images/uno_pic2.jpg" width="300" height="300" >
 
 #### My Arduino Nano Setup for the Monitor Backlight:
 
