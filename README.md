@@ -24,7 +24,7 @@ I also realized that Grensom did not really talk about the power requirements fo
 https://www.temposlighting.com/guides/power-any-ws2812b-setup
 
 Based off the LED Pixel current vs. Brightness value graph, I created a quick Excel table to figure out my power requirements for my setup so I could purchase the appropriate 5V DC power supply:
-!(https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/power_reqs.png)
+<img src="images/power_reqs.png" width="300" height="300" >
 
 ----------------------------------------------------------
 STEP 1: Download the needed Libraries
@@ -78,11 +78,12 @@ Use the corresponding Schematics files to wire up the components in the project 
 4. Led_audio_cycle_bright_sens_display.ino = Schematic 4
 
 My Arduino Uno Setup for the Music Visualizer:
+
 <img src="images/uno_pic1.jpg" width="300" height="300" >
-!(https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/uno_pic2.jpg)
 
 My Arduino Nano Setup for the Monitor Backlight:
-!(https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/nano_pic.jpg)
+
+<img src="images/nano_pic.jpg" width="300" height="300" >
 
 ----------------------------------------------------------
 STEP 4: ENJOY
