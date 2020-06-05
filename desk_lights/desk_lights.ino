@@ -34,8 +34,8 @@ void loop() {
     if (x < 71) {
       //leds[(midpoint)] = CRGB(98,80,85); // pink
       //leds[(midpoint)] = CRGB(56,100,98); // light blue
-      //leds[(midpoint)] = CRGB(117,199,169); // white-ish
-      leds[(midpoint)] = CRGB(243,180,66); // yellow
+      leds[(midpoint)] = CRGB(117,199,169);
+      //leds[(midpoint)] = CRGB(243,180,66); // yellow
       //Serial.print("\t green");
     }
     else if (x > 71 && x <= 142) {
@@ -56,11 +56,11 @@ void loop() {
     }
     else if (x > 355 && x <= 426) {
       leds[(midpoint)] = CRGB(106,198,223);
-      //Serial.print("\t lightblue");
+      //Serial.print("\t lightpink");
     }
     else {
-      leds[(midpoint)] = CRGB(0,255,170);
-      //Serial.print("\t green");
+      leds[(midpoint)] = CRGB(117,199,169);
+      //Serial.print("\t light green");
     }
 
 */
