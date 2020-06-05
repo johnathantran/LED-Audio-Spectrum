@@ -78,7 +78,7 @@ Use the corresponding Schematics files to wire up the components in the project 
 4. Led_audio_cycle_bright_sens_display.ino = Schematic 4
 
 My Arduino Uno Setup for the Music Visualizer:
-!(https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/uno_pic1.jpg)
+<img src="https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/uno_pic1.jpg" width="300" height="300>
 !(https://github.com/johnathantran/LED-Audio-Spectrum/blob/master/uno_pic2.jpg)
 
 My Arduino Nano Setup for the Monitor Backlight:
