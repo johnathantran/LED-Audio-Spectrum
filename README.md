@@ -4,7 +4,7 @@ This project is from Grensom: http://www.gregensom.com
 
 This project programs WS2812B addressable LED strips using an Arduino Uno to act as a Music Visualizer. The LED strip will cycle through a given color palette depending on the volume of the music. A "pulse" will be fired according to the rhythm of the music. See demo below.
 
-<img src="images/demo.mov" height="400" width="400" >
+<img src="images/demoGif.gif" height="400" width="400" >
 
 All credits go to him for the development of this code. Look at the schematics in the "schematics" folder to see the circuit diagrams (based on Arduino Uno). I made 2 adjustments to the program to tailor it to my own personal setup:
 
