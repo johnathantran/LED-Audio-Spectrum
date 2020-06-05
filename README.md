@@ -25,7 +25,7 @@ I also realized that Grensom did not really talk about the power requirements fo
 https://www.temposlighting.com/guides/power-any-ws2812b-setup
 
 Based off the LED Pixel current vs. Brightness value graph, I created a quick Excel table to figure out my power requirements for my setup so I could purchase the appropriate 5V DC power supply:
-<img src="images/power_reqs.png" height="200" >
+<img src="images/power_reqs.png" height="100" >
 
 ----------------------------------------------------------
 STEP 1: Download the needed Libraries
