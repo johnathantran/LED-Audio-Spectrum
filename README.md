@@ -2,10 +2,14 @@
 
 This project is from Grensom: http://www.gregensom.com
 
-All credits go to him for the development of this code. I made 2 adjustments to the program to tailor it to my own personal setup:
+This project programs WS2812B addressable LED strips using an Arduino Uno to act as a Music Visualizer. The LED strip will cycle through a given color palette depending on the volume of the music. A "pulse" will be fired according to the rhythm of the music. See demo below.
+
+<img src="images/demoGif.gif" height="400" width="400" >
+
+All credits go to him for the development of this code. Look at the schematics in the "schematics" folder to see the circuit diagrams (based on Arduino Uno). I made 2 adjustments to the program to tailor it to my own personal setup:
 
 1. I don't have a brightness potentiometer so I have a constant set brightness in the code.
-2. I also reprogrammed the color palette to fit my personal aesthetic. There are 2 included palettes in the program(RGB values included) as shown below. The LED strips will cycle through these color palettes depending on the volume of the music. A "pulse" will be fired according to the rhythm of the music.
+2. I also reprogrammed the color palette to fit my personal aesthetic. There are 2 included palettes in the program(RGB values included) as shown below. 
 
 - Vaporwave (blue, green, purple)
 
@@ -19,9 +23,20 @@ All credits go to him for the development of this code. I made 2 adjustments to 
 Of course, you can define your own color palette according to your taste by following this LED strip color guide:
 http://www.downtownuplighting.com/rgb-color-chart
 
-### Monitor Backlight Program:
+### Additional Monitor Backlight Program:
 
 One program that I did develop is the script "monitor_lights.ino" for adding LED strips to the back of the monitor for backlighting. I attached an Arduino Nano to 2 meters of LED strips affixed in a rectangular around the back border of the monitor. Note that this is a set color and is not music reactive (although if you want them to be music reactive you can simply reupload the same code to the 2nd Arduino). Future work could include turning the backlight into an Ambilight setup (where the LED strips would detect the colors on the screen and match them accordingly).
+
+#### Monitor Backlight Wiring:
+The wiring for the monitor backlight is super simple and involves about 4 wires. You might need one of the DC plug barrel adapters to attach power and ground wires to your 5V power supply: https://www.amazon.com/dp/B079R9WCG2/?coliid=I2RIGU50RG12PE&colid=266S42T52JSTW&psc=1&ref_=lv_ov_lig_dp_it
+
+1. Connect the power wire from the power supply to the power line on the LED strip.
+2. Connect a wire from any Data pin (I used D13) from the Arduino Nano to the data line on the LED strip/
+3. Connect the ground wire from the power supply to the ground of the LED strip.
+4. Connect a second ground wire from the power supply to the ground of the Arudino Nano.
+
+https://www.temposlighting.com/guides/power-any-ws2812b-setup
+
 
 ### Power:
 
