@@ -2,30 +2,35 @@
 
 This project is from Grensom: http://www.gregensom.com
 
-All credits go to him for the development of this code. I made 2 adjustments to the program to adjust it to my own personal setup:
+All credits go to him for the development of this code. I made 2 adjustments to the program to tailor it to my own personal setup:
 
-1. I don't have a brightness potentiometer so I have a constant set brightness in the code)
-2. I also reprogrammed the color palette to fit my personal aesthetic. There are 2 included palettes in the code:
+1. I don't have a brightness potentiometer so I have a constant set brightness in the code.
+2. I also reprogrammed the color palette to fit my personal aesthetic. There are 2 included palettes in the program(RGB values included) as shown below. The LED strips will cycle through these color palettes depending on the volume of the music. A "pulse" will be fired according to the rhythm of the music.
+
 - Vaporwave (blue, green, purple)
+
+<img src="images/vaporwave.png" height="100" >
+
 - Warm Pastels (light yellow, blue, pink)
+(I know these colors don't look the best on screen, but they are visualized quite beautifully on the actual LED strip).
+
+<img src="images/warmtones.png" height="100" >
 
 Of course, you can define your own color palette according to your taste by following this LED strip color guide:
 http://www.downtownuplighting.com/rgb-color-chart
 
-The current program setup allows for up to 7 color choices for the Music Reactive mode of the lights.
-
 ### Monitor Backlight Program:
 
-One program that I did develop is the script "monitor_lights.ino" for adding LED strips to the back of the monitor for backlighting. I attached an Arduino Nano to 2 meters of LED strips affixed in a rectangular around the back border of the monitor. Note that this is a set color and is not music reactive (although if you want them to be music reactive you can simply reupload the same code to the 2nd Arduino).  
+One program that I did develop is the script "monitor_lights.ino" for adding LED strips to the back of the monitor for backlighting. I attached an Arduino Nano to 2 meters of LED strips affixed in a rectangular around the back border of the monitor. Note that this is a set color and is not music reactive (although if you want them to be music reactive you can simply reupload the same code to the 2nd Arduino). Future work could include turning the backlight into an Ambilight setup (where the LED strips would detect the colors on the screen and match them accordingly).
 
 ### Power:
 
-I also realized that Grensom did not really talk about the power requirements for WS2812B LED strips. You will need a 5V DC power supplyt, but the following link helped me a lot in figuring out how many amps of current I needed for the strips (depends on your brightness settings and number of LEDs):
+I also realized that Grensom did not really talk about the power requirements for WS2812B LED strips. You will need a 5V DC power supply, but the following link helped me a lot in figuring out how many amps of current I needed for the strips (depends on your brightness settings and number of LEDs):
 
 https://www.temposlighting.com/guides/power-any-ws2812b-setup
 
 Based off the LED Pixel current vs. Brightness value graph, I created a quick Excel table to figure out my power requirements for my setup so I could purchase the appropriate 5V DC power supply:
-<img src="images/power_reqs.png" height="100" >
+<img src="images/power_reqs.png" height="90" >
 
 ----------------------------------------------------------
 STEP 1: Download the needed Libraries
